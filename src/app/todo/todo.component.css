@@ -1,0 +1,93 @@
+
+/*
+    font-family: 'Charm', cursive;
+
+    font-family: 'Pangolin', cursive;
+
+    */
+
+.title {
+text-align: center;
+margin: 35px;
+font-size: 60px;
+font-weight: bold;
+letter-spacing:5px;
+color: rgb(156, 214, 20);
+font-family: 'Charm', cursive;
+}
+
+.addbutton{
+  cursor: pointer;
+  color: lightgreen;
+  transition: 0.6s;
+  margin-left: 15px;
+}
+.addbutton:hover{
+  color: rgb(3, 172, 3);
+}
+
+ul{
+  list-style-type: none;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+}
+.header input {
+  width: 600px;
+  height:50px;
+}
+
+.container{
+  font-family: 'Pangolin', cursive;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+.todo{
+  width: 550px;
+  border-right: 4px solid rgb(179, 13, 13);
+  border-bottom: 4px solid rgb(179, 13, 13);
+}
+.todo p{
+    text-align:center;
+    color: rgb(179, 13, 13);
+}
+.todo ul{
+  padding-top: 35px;
+}
+
+.todo ul li{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.done{
+  border-left: 4px solid rgb(170, 95, 240);
+  border-bottom: 4px solid rgb(170, 95, 240);
+  width: 550px;
+  padding-left: 50px;
+  color: rgba(122, 235, 57, 0.5);
+}
+.done p{
+  color: rgb(170, 95, 240);
+}
+
+.checkbutton:hover{
+  cursor: pointer;
+  color: rgba(122, 235, 57, 0.5);
+  transition: 0.5s;
+}
+
+.deletebutton:hover {
+  cursor: pointer;
+  color: rgb(170, 3, 3);
+  transition: 0.5s;
+}

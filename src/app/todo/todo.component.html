@@ -1,0 +1,48 @@
+<h4 class="title">Lista Zadań</h4>
+
+<div class="header">
+  <input required maxlength="25" class="form-control form-control-lg border border-primary" placeholder="Wpisz treść kolejnego zadania"
+    type="text" #itemTitle>
+  <div class="addbutton" title="Dodaj zadanie" (click)="onAdd(itemTitle)">
+    <i class="fas fa-plus-circle fa-3x"></i>
+  </div>
+</div>
+<div class="container">
+
+  <div class="todo">
+    <ng-container *ngIf="toDoListArray.length > 0; else noTask">
+        <p>Zadania do wykonania ! </p>
+    </ng-container>
+    <ul>
+      <li *ngFor="let item of toDoListArray | sortName">
+        <span *ngIf="item.isChecked===false">
+        <span title="Zaznacz jako wykonane" class="checkbutton" [class.text-succes]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)" >
+          <i class="far fa-circle fa-2x" [ngClass]=" item.isChecked? 'far fa-smile' : 'far fa-circle' "></i>
+        </span>
+        {{item.title}}
+        <span class="deletebutton" (click)="onDelete(item.$key)">
+          <i class="fas fa-trash-alt fa-2x"></i>
+        </span>
+      </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="done">
+      <p> Zadania wykonane </p>
+    <ul>
+      <li *ngFor="let item of toDoListArray | sortName">
+        <span *ngIf="item.isChecked">
+            <i class="fas fa-check-circle fa-2x"></i>
+          {{item.title}}
+          <span class="deletebutton" (click)="onDelete(item.$key)">
+            <i class="fas fa-trash-alt fa-2x"></i>
+          </span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noTask>Brak zadań do wykonania : )</ng-template>
+
